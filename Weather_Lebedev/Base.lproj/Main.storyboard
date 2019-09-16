@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pl7-LK-1IC">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Weather_Lebedev" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X0w-H1-xYJ" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="X0w-H1-xYJ" secondAttribute="bottom" id="5QD-PI-pHL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X0w-H1-xYJ" secondAttribute="trailing" id="6zW-sC-MM8"/>
+                            <constraint firstItem="X0w-H1-xYJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Kfa-dE-83b"/>
+                            <constraint firstItem="X0w-H1-xYJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZlY-4x-e9B"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="Map" id="cFQ-Pm-xAq"/>
+                    <connections>
+                        <outlet property="mapView" destination="X0w-H1-xYJ" id="lOI-ga-M9Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="842" y="119"/>
+        </scene>
+        <!--City-->
+        <scene sceneID="6Bq-9K-fU5">
+            <objects>
+                <viewController id="mdX-jX-ZzD" customClass="TableViewController" customModule="Weather_Lebedev" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9MQ-tI-gr1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="572-21-shJ">
+                                <rect key="frame" x="0.0" y="44" width="375" height="685"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3DI-uH-WQ1">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="685"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mCell" rowHeight="109" id="HRS-ih-4j8" customClass="MyTableViewCell" customModule="Weather_Lebedev">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="109"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HRS-ih-4j8" id="Qkt-uw-nxD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="108.66666666666667"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMm-oM-GAC">
+                                                            <rect key="frame" x="15" y="19" width="290" height="71"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="lMm-oM-GAC" firstAttribute="leading" secondItem="Qkt-uw-nxD" secondAttribute="leadingMargin" id="8GN-iT-rYl"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="lMm-oM-GAC" secondAttribute="trailing" id="J0r-sm-NLU"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="lMm-oM-GAC" secondAttribute="bottom" constant="8" id="cb6-Xt-q4X"/>
+                                                        <constraint firstItem="lMm-oM-GAC" firstAttribute="top" secondItem="Qkt-uw-nxD" secondAttribute="topMargin" constant="8" id="eFK-ez-4UM"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="myLabel" destination="lMm-oM-GAC" id="9Sj-0m-KcJ"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="mdX-jX-ZzD" id="G9n-4k-EgV"/>
+                                            <outlet property="delegate" destination="mdX-jX-ZzD" id="0kb-vz-UOv"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="3DI-uH-WQ1" secondAttribute="trailing" id="0Dl-18-Orv"/>
+                                    <constraint firstItem="3DI-uH-WQ1" firstAttribute="leading" secondItem="572-21-shJ" secondAttribute="leading" id="Jfd-oE-Hyu"/>
+                                    <constraint firstAttribute="bottom" secondItem="3DI-uH-WQ1" secondAttribute="bottom" id="PEi-xB-OeM"/>
+                                    <constraint firstItem="3DI-uH-WQ1" firstAttribute="top" secondItem="572-21-shJ" secondAttribute="top" id="UPC-KT-5sf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="572-21-shJ" firstAttribute="leading" secondItem="k4b-in-lgg" secondAttribute="leading" id="PJ3-oT-Rpw"/>
+                            <constraint firstItem="572-21-shJ" firstAttribute="top" secondItem="k4b-in-lgg" secondAttribute="top" id="dGb-Il-c3l"/>
+                            <constraint firstItem="k4b-in-lgg" firstAttribute="bottom" secondItem="572-21-shJ" secondAttribute="bottom" id="qDp-Fr-cI4"/>
+                            <constraint firstItem="k4b-in-lgg" firstAttribute="trailing" secondItem="572-21-shJ" secondAttribute="trailing" id="uHg-G8-0VC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="k4b-in-lgg"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="City" image="City" id="cnn-oV-6pV"/>
+                    <connections>
+                        <outlet property="mTableView" destination="3DI-uH-WQ1" id="dqC-di-3md"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qvm-zC-gUq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492.753623188406" y="118.52678571428571"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="j7Q-yo-pAg">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Pl7-LK-1IC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m0g-UK-wqR">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="2jk-wO-T8C"/>
+                        <segue destination="mdX-jX-ZzD" kind="relationship" relationship="viewControllers" id="szS-Og-HAc"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="npd-VT-ui9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="151" y="119"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="City" width="30" height="30"/>
+        <image name="Map" width="30" height="30"/>
+    </resources>
+</document>
